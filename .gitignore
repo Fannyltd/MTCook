@@ -21,7 +21,7 @@ output/
 *.jsonl
 
 # --- Data (optional) ---
-data/
+
 !data/*.sample
 !data/*.example
 
