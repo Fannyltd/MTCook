@@ -40,7 +40,11 @@ project/
 │   └── orchestrator/    # Main pipeline controller
 │       └── orchestrator.py
 │
-└── main.py (optional)   # Entry point for running the pipeline
+├── tests/               # unit tests
+└── main.py              # Entry point for running the pipeline
+└── main01.py            # For test
+└── main02.py            # For test
+└── config.py 
 ```
 
 ---
