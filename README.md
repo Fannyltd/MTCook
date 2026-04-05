@@ -22,7 +22,7 @@ The pipeline is orchestrated by a central `Orchestrator` class that coordinates 
 ---
 
 ## 📁 Project Structure
-
+```
 project/
 │
 ├── data/                # Input data (CSV, JSON, etc.)
@@ -41,7 +41,7 @@ project/
 │       └── orchestrator.py
 │
 └── main.py (optional)   # Entry point for running the pipeline
-
+```
 
 ---
 
