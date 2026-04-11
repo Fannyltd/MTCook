@@ -29,7 +29,9 @@ class Translator:
         outputs = self.model.generate(**inputs, max_length=200)
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    def translate(self, df: pd.DataFrame, column: str, new_column: str = "translation") -> pd.DataFrame:
+    def translate(
+        self, df: pd.DataFrame, column: str, new_column: str = "translation"
+    ) -> pd.DataFrame:
         """
         Traduit une colonne entière du DataFrame.
 
