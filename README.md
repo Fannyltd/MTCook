@@ -1,9 +1,8 @@
-# Machine Translation Pipeline Project
+# Projet MTCook - Template Cookiecutter pour le Machine Learning
+📝 Présentation du projet
+Dans le cadre de mon cours de Big Data et Infrastructure Machine Learning, j'ai réalisé ce projet qui consiste à créer un template Cookiecutter standardisé.
 
-This repository contains a modular machine translation pipeline designed to translate text
-from French to English using a HuggingFace model and to evaluate translation quality using
-standard NLP metrics such as BLEU. The project is structured to be clear, extensible, and
-aligned with good software engineering practices.
+L'objectif est de fournir une structure de projet prête à l'emploi pour le Machine Learning, garantissant que chaque nouveau projet commence avec les bonnes pratiques : dossier de données organisé, tests unitaires, et formatage de code automatique.
 
 ---
 ## À propos du projet
@@ -12,34 +11,49 @@ Ce dépôt fait partie du cours **Big Data and Business Intelligence (BIDABI)**.
 Il a pour objectif d’initier les étudiants au travail avec du code open‑source et à l’adaptation de projets
 existants dans une structure professionnelle.
 
-Dans ce projet, les étudiants intègrent un pipeline de traduction automatique (NLP) basé sur un modèle
-HuggingFace, comprenant le chargement des données, la traduction, le post‑traitement et l’évaluation
-(BLEU). Ils apprennent à :
+🛠️ Structure du Projet
+Mon template génère automatiquement l'arborescence suivante :
 
-- analyser et comprendre un projet open‑source existant,
-- réorganiser et intégrer ce code dans un template Cookiecutter,
-- structurer un pipeline de traitement de données selon les bonnes pratiques,
-- préparer un environnement reproductible et adapté aux workflows Big Data.
+data/ : Stockage des données brutes (raw) et transformées (processed).
 
-Ce projet constitue une première immersion dans l’ingénierie des pipelines de données et dans les
-méthodologies utilisées dans les systèmes Big Data modernes.
+models/ : Emplacement pour les modèles entraînés.
 
----
-## 📌 Project Overview
+notebooks/ : Pour l'exploration de données.
 
-The goal of this project is to implement a complete translation workflow, including:
+src/ : Le code source du pipeline (nettoyage, traduction, évaluation).
 
-- loading input data,
-- applying a machine translation model,
-- processing translated outputs,
-- evaluating translation quality,
-- saving results to an output directory.
+tests/ : Mes tests unitaires avec pytest.
 
-The pipeline is orchestrated by a central `Orchestrator` class that coordinates all steps.
+pyproject.toml : Gestion des dépendances et configuration des outils.
 
 ---
+## 🚀 Installation et Utilisation
+1. Prérequis
+J'utilise Python 3.10+. Il est recommandé de créer un environnement virtuel Bash :
+python -m venv .venv
+source .venv/Scripts/activate  # Sur Windows: .venv\Scripts\activate
+2. Installation des dépendances
+J'ai configuré le projet pour qu'il s'installe facilement avec les outils nécessaires :
+pip install -r requirements.txt
+# Ou si vous utilisez le pyproject.toml
+pip install .
+3. Lancer le pipeline
+Le cœur de mon projet contient un pipeline de traitement de texte (traduction et évaluation). Pour exécuter la logique principale :
+python src/main.py
 
-## 📁 Project Structure
+---
+## 🧪 Qualité et Tests
+Pour garantir la fiabilité de mon code, j'ai intégré deux outils essentiels que j'utilise lors du développement :
+
+Tests : Pour vérifier que mes fonctions de calcul de score (BLEU, chrF) fonctionnent :
+pytest
+Formatage : Pour garder un code propre et lisible selon la norme PEP8 :
+black .
+
+
+---
+
+## 📁 Structure du projet
 ```
 project/
 │
@@ -67,63 +81,13 @@ project/
 
 ---
 
-## ⚙️ How the Pipeline Works
+## 🎓 Objectifs Pédagogiques
+Ce projet m'a permis de valider plusieurs compétences :
 
-The `Orchestrator` class performs the following steps:
+Automatisation : Création de scripts de pré/post génération (hooks).
 
-1. **Load data** from the specified file (CSV or JSON).
-2. **Translate text** using the model  
-   `Helsinki-NLP/opus-mt-fr-en`.
-3. **Process results** (optional transformations).
-4. **Evaluate translations** using BLEU or another metric.
-5. **Save outputs** to the `output/` directory.
-6. **Print evaluation scores** and completion status.
+Modularité : Séparation de la logique de traitement et de la structure du projet.
 
-Example execution:
+CI/CD : Mise en place d'un workflow GitHub Actions pour tester automatiquement le code à chaque envoi.
 
-```python
-if __name__ == "__main__":
-    orch = Orchestrator(
-        data_path="big.csv",
-        output_dir="output",
-        translation_model="Helsinki-NLP/opus-mt-fr-en",
-        metric="bleu"
-    )
-    orch.run()
-```
-## 🎯 Learning Objectives
-By working with this project, students will practice:
-
-- structuring a Python project using modular architecture,
-- working with HuggingFace translation models,
-- handling text datasets,
-- computing translation quality metrics,
-- managing a complete NLP pipeline from input to evaluation.
-
-## 🧩 Assignment Instructions
-You must use this repository as the source code for your assignment:
-
-👉 https://github.com/delnouty/bidabi-clone-adapt-translate.git (github.com in Bing)
-
-Your task is to:
-
-- Generate a new project using the provided template.
-- Clone this repository.
-- Transfer the code from this repository into the structure created by your template.
-- Adapt the code where necessary to match the template’s conventions.
-- Ensure the pipeline runs correctly inside the new project.
-
-You are expected to demonstrate initiative and independent problem‑solving while integrating the code.
-
-📅 Your results will be reviewed during the next session.
-
-## 🚀 Running the Project
-After integrating the code into your template:
-```Bash
-python -m venv .venv
-source .venv/bin/activate   # or .venv\Scripts\Activate.ps1 on Windows
-pip install -r requirements.txt
-python src/orchestrator/orchestrator.py
-```
-## 📄 License
-This project is provided for educational purposes.  
+Réalisé par : Fanny – Étudiante en Master Big Data
