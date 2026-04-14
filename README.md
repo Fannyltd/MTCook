@@ -11,21 +11,6 @@ Ce dépôt fait partie du cours **Big Data and Business Intelligence (BIDABI)**.
 Il a pour objectif d’initier les étudiants au travail avec du code open‑source et à l’adaptation de projets
 existants dans une structure professionnelle.
 
-🛠️ Structure du Projet
-Mon template génère automatiquement l'arborescence suivante :
-
-data/ : Stockage des données brutes (raw) et transformées (processed).
-
-models/ : Emplacement pour les modèles entraînés.
-
-notebooks/ : Pour l'exploration de données.
-
-src/ : Le code source du pipeline (nettoyage, traduction, évaluation).
-
-tests/ : Mes tests unitaires avec pytest.
-
-pyproject.toml : Gestion des dépendances et configuration des outils.
-
 ---
 ## 🚀 Installation et Utilisation
 1. Prérequis
@@ -55,6 +40,22 @@ black .
 
 ## 📁 Structure du projet
 ```
+
+Mon template génère automatiquement l'arborescence suivante :
+
+data/ : Stockage des données brutes (raw) et transformées (processed).
+
+models/ : Emplacement pour les modèles entraînés.
+
+notebooks/ : Pour l'exploration de données.
+
+src/ : Le code source du pipeline (nettoyage, traduction, évaluation).
+
+tests/ : Mes tests unitaires avec pytest.
+
+pyproject.toml : Gestion des dépendances et configuration des outils.
+
+
 project/
 │
 ├── data/                # Input data (CSV, JSON, etc.)
